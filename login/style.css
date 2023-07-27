@@ -1,0 +1,210 @@
+:root {
+    --bg: #f4cbd6;
+    --face: #fea4aa;
+    --nose: #490336;
+    --ear: #aaa4a4;
+    --eye: #0e0101;
+    --cheek: #f17d89;
+    --mouth: #321b28;
+    --teeth: #ddd;
+    --tail: #e76e6e;
+}
+body {
+    background: var(--bg);
+}
+#wrap {
+    width: 500px;
+    height: 500px;
+    /* background: #ddd; */
+    margin: 250px auto;
+}
+.loopy {
+    margin: auto;
+    animation: show 0.5s infinite;
+}
+@keyframes show {
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* loopy hover event */
+.loopy:hover {
+    scale: 1.2;
+}
+.loopy:hover .eye {
+    padding-top: 38%;
+}
+.loopy:hover .eyeLeft {
+    transform: rotate(-45deg);
+    height: 50px;
+}
+.loopy:hover .eyeRight {
+    transform: rotate(45deg);
+    height: 50px;
+}
+.loopy:hover .mouth::before {
+    display: block;
+}
+.loopy:hover .teeth {
+    display: none;
+}
+.loopy:hover .mouth {
+    width: 76px;
+    height: 16px;
+    border-radius: 0 50% 50% 25%;
+    transform: translateX(30px) rotate(-22deg);
+}
+.tail {
+    position: relative;
+    margin: auto;
+    width: 5px;
+    height: 40px;
+    background: var(--tail);
+    border-radius: 10px 10px 0 0;
+}
+.tail::after {
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+    content: '';
+    width: 4px;
+    height: 33px;
+    background: var(--tail);
+    transform: rotate(45deg);
+    bottom: -3px;
+    left: 13px;
+}
+.ear {
+    display: flex;
+    justify-content: space-evenly;
+}
+.earLeft {
+    width: 40px;
+    height: 48px;
+    background: var(--face);
+    border-radius: 20px 20px 0 0;
+    transform: rotate(-45deg);
+}
+.earRight {
+    width: 40px;
+    height: 48px;
+    background: var(--face);
+    border-radius: 20px 20px 0 0;
+    transform: rotate(45deg);
+}
+.loopyFace {
+    margin: -10% auto;
+    position: relative;
+    width: 273px;
+    height: 287px;
+    background: var(--face);
+    border-radius: 44% 44% 39% 39%;
+}
+.loopyFace::before {
+    position: absolute;
+    border-radius: 43%;
+    content: '';
+    width: 114px;
+    height: 62px;
+    background: var(--face);
+    transform: rotate(41deg);
+    bottom: 28px;
+    left: -15px;
+}
+.loopyFace::after {
+    position: absolute;
+    border-radius: 43%;
+    content: '';
+    width: 114px;
+    height: 62px;
+    background: var(--face);
+    transform: rotate(-41deg);
+    bottom: 28px;
+    right: -15px;
+}
+.eye {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 49%;
+
+}
+.eyeLeft {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--eye);
+    box-shadow: -31px 24px 18px var(--cheek);
+}
+.eye span {
+    width: 5px;
+    height: 5px;
+    background: var(--teeth);
+    display: block;
+    border-radius: 50%;
+    margin: 3px 0 0 15px;
+}
+.eyeRight {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--eye);
+    box-shadow: 31px 24px 18px var(--cheek);
+}
+.nose {
+    width: 55px;
+    height: 42px;
+    background: var(--nose);
+    margin: auto;
+    border-radius: 50px 50px 100px 100px;
+}
+.nose span{
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: 34px 6px 10px 0px var(--teeth);
+}
+.cheek {
+    display: flex;
+    justify-content: space-around;
+}
+.cheek span {
+    display: block;
+    width: 34px;
+    height: 11px;
+    border-radius: 20px;
+    box-shadow: 3px 29px 20px var(--cheek);
+}
+.mouth {
+    position: relative;
+    width: 70px;
+    height: 18px;
+    background: var(--mouth);
+    margin: 3% auto;
+    border-radius: 50%;
+}
+.mouth::before {
+    display: none;
+    position: absolute;
+    border-radius: 43% 43% 11% 15%;
+    content: '';
+    width: 16px;
+    height: 76px;
+    background: var(--mouth);
+    transform: rotate(-50deg);
+    bottom: -8px;
+    left: -28px;
+}
+.teeth {
+    margin: auto;
+    background: var(--teeth);
+    width: 33px;
+    height: 10px;
+    border-radius: 2px;
+}
+.text span {
+    color: var(--tail);
+}
