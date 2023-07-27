@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login&join | css Sprite</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="weniv">
+        <div class="logo">
+            <a href="">
+                <img src="./images/weniv-logo.png" alt="">
+            </a>
+        </div>
+        <div class="txt">
+            <p>위니브를 더 즐겁고 편리하게 이용하세요.</p>
+        </div>
+        <button type="submit" class="mainLogin" onclick="show()">로그인</button>
+    </div>
+    <section id="loginWrap" class="modal">
+        <div class="title">
+            <h1>로그인 또는 회원가입</h1>
+            <a href="">
+                <img src="./images/close.png" alt="">
+            </a>
+        </div>
+        <div class="loginInner">
+            <div class="loginForm">
+                <h2>위니브에서 여러분의 궁금증을 해결하세요! :)</h2>
+                <form action="">
+                    <div class="idPw">
+                        <input type="text" placeholder="아이디" class="id">
+                        <span class="id-hide">아이디를 입력해주세요</span>
+                        <input type="password" placeholder="비밀번호"
+                        class="pw">
+                        <span class="pw-hide">비밀번호를 입력해주세요</span>
+                    </div>
+                    <div class="loginStay">
+                        <input type="checkbox" id="inputCheck" class="inputHold">
+                        <label for="inputCheck" class="labelCheck">로그인 상태 유지</label>
+                    </div>
+                    <button type="submit" class="loginBtn">로그인</button>
+                </form>
+                <div class="joinSearch">
+                    <button type="button" class="join">회원가입</button>
+                    <button type="button" class="search">아이디/비밀번호 찾기
+                    </button>
+                </div>
+                <div class="orBox">
+                    <span class="orBorder"></span>
+                    <span class="or">또는</span>
+                    <span class="orBorder"></span>
+                </div>
+            </div>
+            <div class="loginEasy">
+                <h3 class="a11y-hidden">소셜서비스 로그인</h3>
+                <ul>
+                    <li class="border-google">
+                        <a class="icon google" href="">구글 계정으로 로그인</a>
+                    </li>
+                    <li class="border-facebook">
+                        <a class="icon facebook" href="">페이스북 계정으로 로그인</a>
+                    </li>
+                    <li class="border-naver">
+                        <a class="icon naver" href="">네이버 계정으로 로그인</a>
+                    </li>
+                    <li class="border-kakao">
+                        <a class="icon kakao" href="">카카오톡 계정으로 로그인</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        const weniv = document.querySelector('.weniv')
+        const modal = document.querySelector('#loginWrap');
+
+        function show() {
+            modal.style.display = 'block';
+            weniv.style.display = 'none';
+        }
+
+        function handleInput(inputElement, hideElement) {
+            inputElement.addEventListener('blur', function() {
+                if (inputElement.value === '') {
+                hideElement.style.display = 'none';
+                inputElement.style.border = '1px solid #C4C4C4';
+            }
+        });
+
+        inputElement.addEventListener('focus', function() {
+            hideElement.style.display = 'block';
+            inputElement.style.border = '1px solid #F4492E';
+        });
+
+        inputElement.addEventListener('input', function() {
+            if (inputElement.value !== '') {
+            hideElement.style.display = 'none';
+            inputElement.style.border = '1px solid #C4C4C4';
+            }
+        });
+        }
+
+        const idInput = document.querySelector('.id');
+        const pwInput = document.querySelector('.pw');
+        const idHide = document.querySelector('.id-hide');
+        const pwHide = document.querySelector('.pw-hide');
+
+        handleInput(idInput, idHide);
+        handleInput(pwInput, pwHide);
+    </script>
+</body>
+</html>
